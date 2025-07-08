@@ -1,0 +1,10 @@
+name: CI Pipeline
+on: [push]
+jobs:
+  build:             # 任务名称
+    runs-on: ubuntu-latest  # 运行环境
+    steps:
+      - name: Checkout code  # 步骤名称
+        uses: actions/checkout@v4  # 使用官方 Action
+      - name: Run tests
+        run: npm test  # 执行命令
