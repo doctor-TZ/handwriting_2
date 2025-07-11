@@ -44,8 +44,8 @@ class CNN_Model(nn.Module):
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model = CNN_Model()
-train_loader, val_loader = get_dataLoaders('dataset.csv', 64)
-opt = optim.Adam(model.parameters(),lr=0.0001)
+train_loader, val_loader = get_dataLoaders('dataset.csv', 32)
+opt = optim.Adam(model.parameters(),lr=0.001)
 crit = nn.CrossEntropyLoss()
 # scheduler = optim.lr_scheduler.StepLR(opt, step_size=5, gamma=0.1)
 epochs = 50
